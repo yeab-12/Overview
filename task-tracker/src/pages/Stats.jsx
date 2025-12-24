@@ -3,14 +3,13 @@ import { useTasks } from "../store/taskContext";
 const Stats = () => {
   const { tasks } = useTasks();
 
-  const total = tasks.length;
   const completed = tasks.filter(t => t.completed).length;
-  const remaining = total - completed;
+  const remaining = tasks.length - completed;
 
   return (
-    <div className="stats">
-      <h2>📊 Task Statistics</h2>
-      <p>Total Tasks: {total}</p>
+    <div>
+      <h2>Stats</h2>
+      <p>Total: {tasks.length}</p>
       <p>Completed: {completed}</p>
       <p>Remaining: {remaining}</p>
     </div>
